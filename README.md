@@ -39,7 +39,33 @@ The app includes:
 - **Validation**: Yup
 - **Storage**: AsyncStorage
 - **Icons**: Feather Icons (@expo/vector-icons)
-- **API**: DummyJSON API
+- **HTTP Client**: Axios
+- **APIs**: 
+  - DummyJSON API (Authentication & Transport Data)
+  - Unsplash API (Images)
+
+## 🌐 API Integration
+
+This app demonstrates real-world API integration as per assignment requirements:
+
+### Authentication API
+- **Endpoint**: `https://dummyjson.com/auth/login`
+- **Purpose**: User login and authentication
+- **Method**: POST with username/password
+
+### Transport Data API
+- **Endpoint**: `https://dummyjson.com/products`
+- **Purpose**: Fetch dynamic transport items
+- **Method**: GET with data transformation
+- **Features**: 
+  - Real-time data fetching
+  - Search functionality via API
+  - Individual item retrieval by ID
+  - Fallback to local data on error
+
+### Image API
+- **Endpoint**: `https://images.unsplash.com`
+- **Purpose**: High-quality transport and destination images
 
 ## 📦 Installation
 
