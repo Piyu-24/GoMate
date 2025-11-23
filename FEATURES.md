@@ -125,13 +125,16 @@ git commit -m "chore: final cleanup and optimization"
   - Type-safe navigation with TypeScript
 
 #### ✅ Home Screen with Dynamic List
-- **Files**: `src/screens/home/HomeScreen.tsx`
+- **Files**: `src/screens/home/HomeScreen.tsx`, `src/services/transportService.ts`
 - **Implementation**:
+  - **Real API Integration**: Fetches from `https://dummyjson.com/products`
+  - Dynamic data transformation to transport items
   - FlatList with API data
   - TransportCard components
-  - Pull-to-refresh
-  - Search functionality
-  - Loading states
+  - Pull-to-refresh with API call
+  - Search functionality with API endpoint
+  - Loading states during API calls
+  - Error handling with fallback data
 
 #### ✅ Item Cards
 - **Files**: `src/components/common/TransportCard.tsx`
@@ -186,6 +189,46 @@ git commit -m "chore: final cleanup and optimization"
   - Persistent preference
   - Dynamic color schemes
   - All screens adapted
+
+---
+
+## 🌐 API Integration (Assignment Requirement)
+
+### External APIs Used
+
+#### 1. Authentication API
+- **Provider**: DummyJSON
+- **Endpoint**: `https://dummyjson.com/auth/login`
+- **Usage**: User login and session management
+- **File**: `src/services/authService.ts`
+
+#### 2. Transport Data API  
+- **Provider**: DummyJSON Products API
+- **Endpoint**: `https://dummyjson.com/products`
+- **Usage**: Fetch dynamic transport items with transformation
+- **File**: `src/services/transportService.ts`
+- **Features**:
+  - GET all products (transformed to transport items)
+  - GET product by ID
+  - SEARCH products
+  - Error handling with fallback
+
+#### 3. Image CDN
+- **Provider**: Unsplash
+- **Endpoint**: `https://images.unsplash.com`
+- **Usage**: High-quality images for transport and destinations
+- **File**: `src/constants/images.ts`
+
+### API Integration Features
+- ✅ Real HTTP requests using Axios
+- ✅ Data transformation layer
+- ✅ Error handling with try-catch
+- ✅ Fallback to local data on failure
+- ✅ Loading states during API calls
+- ✅ Pull-to-refresh triggers API calls
+- ✅ Search integrated with API endpoint
+
+**Full API documentation**: See `API_INTEGRATION.md`
 
 ---
 
